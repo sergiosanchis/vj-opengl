@@ -20,8 +20,22 @@ void Game::render()
 
 void Game::keyPressed(int key)
 {
-	if(key == 27) // Escape code
-		bPlay = false;
+	switch (key) {
+		case 27: // Escape code
+			bPlay = false;
+			break;
+		case '1':
+			glClearColor(1.0f, 0.0f, 0.0f, 1.0f);
+			break;
+		case '2':
+			glClearColor(0.0f, 1.0f, 0.0f, 1.0f);
+			break;
+		case '3':
+			glClearColor(0.0f, 0.0f, 1.0f, 1.0f);
+			break;
+		default:
+			glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+	}
 }
 
 void Game::keyReleased(int key)
